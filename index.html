@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iconic Shizuoka 2026 — デザイン＆コンテンツ参考資料集</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--red:#D93025;--orange:#F5A623;--cream:#FAF7F2;--dark:#1C1917;--gray:#78716C;--card:#fff;--border:#E7E5E4}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--dark);line-height:1.85}
+img{display:block;max-width:100%;height:auto}
+
+.alert{background:#FFFBEB;border:2px solid #F59E0B;border-radius:12px;padding:18px 24px;margin:24px auto;max-width:1060px;font-size:13px;color:#92400E;display:flex;align-items:flex-start;gap:12px}
+.alert b{color:#78350F;white-space:nowrap}
+
+.hero{background:var(--dark);color:#fff;padding:64px 32px 48px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 80%,rgba(217,48,37,.18),transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(245,166,35,.12),transparent 60%)}
+.hero>*{position:relative;z-index:1}
+.badge{display:inline-block;font-size:10px;letter-spacing:3px;text-transform:uppercase;border:1px solid rgba(255,255,255,.25);padding:5px 18px;border-radius:20px;color:var(--orange);margin-bottom:24px}
+.hero h1{font-family:'Shippori Mincho',serif;font-size:clamp(26px,5vw,46px);font-weight:700;margin-bottom:8px}
+.hero .sub{font-size:14px;color:rgba(255,255,255,.5);font-weight:300}
+.hero .meta{font-size:11px;color:rgba(255,255,255,.28);margin-top:20px;letter-spacing:1px}
+
+.nav{background:var(--card);border-bottom:1px solid var(--border);padding:14px 24px;position:sticky;top:0;z-index:100;overflow-x:auto;white-space:nowrap}
+.nav-in{max-width:1060px;margin:0 auto;display:flex;gap:6px}
+.nav a{font-size:11px;color:var(--gray);text-decoration:none;padding:5px 14px;border-radius:18px;background:#F5F3F0;transition:.2s;flex-shrink:0;font-weight:500}
+.nav a:hover{background:var(--red);color:#fff}
+
+.w{max-width:1060px;margin:0 auto;padding:0 28px}
+section{padding-top:72px}
+.lb{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:8px}
+.tt{font-family:'Shippori Mincho',serif;font-size:clamp(22px,3.2vw,32px);font-weight:700;margin-bottom:10px;line-height:1.35}
+.ds{font-size:13px;color:var(--gray);max-width:640px;margin-bottom:36px}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+.g3{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;margin-bottom:24px}
+
+.c{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.c:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(0,0,0,.07)}
+.ci{width:100%;height:210px;object-fit:cover;background:#E8E4DF}
+.cb{padding:20px 22px 22px}
+.tg{display:inline-block;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);font-weight:700;background:rgba(217,48,37,.07);padding:3px 9px;border-radius:4px;margin-bottom:8px}
+.c h3{font-size:15px;font-weight:700;margin-bottom:6px;line-height:1.4}
+.c p,.ft-body p{font-size:12px;color:var(--gray);line-height:1.75}
+.lk{display:inline-block;margin-top:10px;font-size:11px;color:var(--red);text-decoration:none;font-weight:600}
+.lk:hover{text-decoration:underline}
+
+.ft{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;margin-bottom:20px}
+.ft.rv{direction:rtl}.ft.rv>*{direction:ltr}
+.ft-img{width:100%;height:100%;min-height:260px;object-fit:cover;background:#E8E4DF}
+.ft-body{padding:32px 28px;display:flex;flex-direction:column;justify-content:center}
+.ft-body h3{font-size:18px;font-weight:700;margin-bottom:10px}
+
+.co{background:linear-gradient(135deg,#FEF7F0,#FFF8F0);border-left:3px solid var(--orange);border-radius:0 10px 10px 0;padding:22px 26px;margin:28px 0}
+.co strong{display:block;font-size:13px;margin-bottom:4px}
+.co p{font-size:12px;color:var(--gray);line-height:1.8}
+
+.nl{counter-reset:num;margin-bottom:32px}
+.ni{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid #F0EDEA}
+.ni:last-child{border-bottom:none}
+.nn{counter-increment:num;flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.nn::before{content:counter(num)}
+.ni strong{font-size:14px;display:block;margin-bottom:3px}
+.ni span{font-size:12px;color:var(--gray);line-height:1.7}
+.r{color:var(--red);font-weight:600}
+
+.ls{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;margin-top:20px}
+.ls h3{font-size:16px;font-weight:700;margin-bottom:16px}
+.li{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #F0EDEA}
+.li:last-child{border-bottom:none}
+.ln{width:28px;height:28px;border-radius:50%;background:#F5F3F0;color:var(--red);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.li a{font-size:13px;color:var(--red);text-decoration:none;font-weight:500}
+.li a:hover{text-decoration:underline}
+.li .ld{font-size:11px;color:var(--gray);margin-top:2px}
+
+/* photo row */
+.prow{display:flex;gap:8px;margin:20px 0 28px;overflow-x:auto}
+.prow img{height:140px;width:auto;border-radius:10px;flex-shrink:0;object-fit:cover}
+
+footer{text-align:center;padding:48px 28px;color:var(--gray);font-size:11px;border-top:1px solid var(--border);margin-top:60px}
+@media(max-width:768px){.ft,.g2{grid-template-columns:1fr}.ft.rv{direction:ltr}.w{padding:0 16px}.hero{padding:48px 16px 36px}.prow img{height:100px}}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">Internal Reference — v3.0</div>
+  <h1>Iconic Shizuoka 2026<br>デザイン＆コンテンツ参考資料集</h1>
+  <p class="sub">チーム共有用 ー デザインコンテンツ部 / マルシェ担当部 / SNS担当部</p>
+  <p class="meta">I see's（Iconic Shizuoka 2026 実行委員会）｜ 2026年3月作成</p>
+</div>
+
+<div class="alert">
+  <b>📌 重要</b>
+  <span>このHTMLファイルを<strong>ダウンロードしてChromeやSafari等のブラウザで開く</strong>と、各イベント公式サイトの写真が表示されます。Claude画面内では外部画像がブロックされるため表示されません。</span>
+</div>
+
+<nav class="nav"><div class="nav-in">
+  <a href="#s1">❶ 参考イベント5選</a><a href="#s2">❷ ポスター・チラシ5選</a><a href="#s3">❸ 会場装飾5選</a><a href="#s4">❹ コンテンツ企画5選</a><a href="#s5">🔗 全リンク</a>
+</div></nav>
+
+<div class="w">
+
+<!-- ================================================================ -->
+<!-- SECTION 1: 参考イベント 5選 -->
+<!-- ================================================================ -->
+<section id="s1">
+<p class="lb">01 ─ Reference Events</p>
+<h2 class="tt">参考になるイベント 5選</h2>
+<p class="ds">マルシェ＋パフォーマンス＋会場装飾で若年層を集客している先行事例。すべて公式写真付き。</p>
+
+<!-- ① 東京蚤の市 -->
+<div class="ft">
+  <img class="ft-img" src="https://tokyonominoichi.com/2025_autumn/wp-content/uploads/2025/09/25autumnNomi_pc_01-2.jpg" alt="東京蚤の市'25 AUTUMN メインビジュアル">
+  <div class="ft-body">
+    <div class="tg">★ 最重要参考</div>
+    <h3>① 東京蚤の市（手紙社）</h3>
+    <p>2012年から続く日本最大級マーケットイベント。300組超出店＋音楽ライブ＋大道芸＋フォトスポット。<br><br>
+    <strong>参考ポイント：</strong>「花マルシェ」「東京北欧市」等エリア名で世界観を統一。2026春は「青春蚤の市」（高校生〜大学院生限定出店）を新設。Vlog＆フォトコンテストも実施。<br><br>
+    <span class="r">→ 「フラワード・ストリート」等のエリア名で呉服町通りに世界観をつくる手法がそのまま応用可能</span></p>
+    <a class="lk" href="https://tokyonominoichi.com/2025_autumn/" target="_blank">公式サイト →</a>
+  </div>
+</div>
+
+<!-- 東京蚤の市 公式写真ギャラリー -->
+<div class="prow">
+  <img src="https://tokyonominoichi.com/2025_autumn/wp-content/themes/tegamisha/assets/img/top/story_img_01.png" alt="東京蚤の市 会場風景1">
+  <img src="https://tokyonominoichi.com/2025_autumn/wp-content/themes/tegamisha/assets/img/top/story_img_02.png" alt="東京蚤の市 会場風景2">
+  <img src="https://tokyonominoichi.com/2025_autumn/wp-content/themes/tegamisha/assets/img/top/story_img_03.png" alt="東京蚤の市 会場風景3">
+  <img src="https://tokyonominoichi.com/2025_autumn/wp-content/themes/tegamisha/assets/img/top/story_img_04.png" alt="東京蚤の市 会場風景4">
+  <img src="https://tokyonominoichi.com/2025_autumn/wp-content/themes/tegamisha/assets/img/top/story_img_05.png" alt="東京蚤の市 会場風景5">
+  <img src="https://tokyonominoichi.com/2025_autumn/wp-content/uploads/2025/08/hanadocoroennandennhanatokurashi-コピー-齋藤貴洋.jpg" alt="花マルシェ">
+  <img src="https://tokyonominoichi.com/2025_autumn/wp-content/uploads/2026/01/DSC_3271-610x610.jpg" alt="こども蚤の市">
+</div>
+
+<div class="g2">
+<!-- ② 仙台まるごとデザインマーケット -->
+<div class="c">
+  <img class="ci" src="https://marugotodesign.com/wp-content/uploads/2025/06/marudeza4_hp_top-scaled.png" alt="仙台まるごとデザインマーケット Vol.4 メインビジュアル">
+  <div class="cb">
+    <div class="tg">クリエイティブ系</div>
+    <h3>② 仙台まるごとデザインマーケット</h3>
+    <p>東北最大級クリエイティブの祭典。企業PRブース＋学生向け説明会を同時開催。夢メッセみやぎにて2026年4月開催予定。協賛プラン設計と「学生との交流会」運営の参考に。</p>
+    <a class="lk" href="https://marugotodesign.com/" target="_blank">公式サイト →</a>
+  </div>
+</div>
+
+<!-- ③ デザインフェスタ -->
+<div class="c">
+  <img class="ci" src="https://storage.googleapis.com/designfesta-wp-production-bucket/2025/06/7c44e16e-topback.jpg" alt="デザインフェスタ 会場写真">
+  <div class="cb">
+    <div class="tg">大規模アートイベント</div>
+    <h3>③ デザインフェスタ（東京ビッグサイト）</h3>
+    <p>6,500ブース超のアジア最大級アートイベント。オリジナルであれば無審査で出展可。ブース装飾の自由度と体験型ワークショップの見せ方が参考。初出店サポートの仕組みも確立。</p>
+    <a class="lk" href="https://designfesta.com/" target="_blank">公式サイト →</a>
+  </div>
+</div>
+</div>
+
+<!-- 仙台 + デザフェス 公式写真 -->
+<div class="prow">
+  <img src="https://marugotodesign.com/wp-content/uploads/2023/02/maru_1.png" alt="まるデザ つながるひろがる">
+  <img src="https://marugotodesign.com/wp-content/uploads/2023/02/maru_2.png" alt="まるデザ 作品を見てもらえる">
+  <img src="https://marugotodesign.com/wp-content/uploads/2023/02/maru_3.png" alt="まるデザ クリエイターに会える">
+  <img src="https://marugotodesign.com/wp-content/uploads/2023/02/maru_4.png" alt="まるデザ こどもも楽しめる">
+  <img src="https://storage.googleapis.com/designfesta-wp-production-bucket/2021/09/34adda4f-londing-scaled.jpeg" alt="デザインフェスタ 会場全景">
+</div>
+
+<div class="g2">
+<!-- ④ GREEN HOOP MARKET -->
+<div class="c">
+  <img class="ci" src="https://greensprings.jp/wp-content/uploads/2024/08/09afb00a6b55faa2da4f8b6e4f6e2a1e-1024x683.jpg" alt="GREEN HOOP MARKET">
+  <div class="cb">
+    <div class="tg">食×クラフト×音楽</div>
+    <h3>④ GREEN HOOP MARKET（立川 GREEN SPRINGS）</h3>
+    <p>食＋クラフト＋音楽ライブを芝生広場で同時開催。地域コミュニティの輪をつくるマーケットというコンセプトが「静岡の"わ"の１ページ」と通じる。</p>
+  </div>
+</div>
+
+<!-- ⑤ フラノマルシェ -->
+<div class="c">
+  <img class="ci" src="https://visit-hokkaido.jp/lsc/upfile/spot/0001/0212/10212_2_l.jpg" alt="フラノマルシェ">
+  <div class="cb">
+    <div class="tg">地域ブランド型</div>
+    <h3>⑤ フラノマルシェ（北海道富良野）</h3>
+    <p>地域資源を活かした常設型マルシェ。行政×民間連携で中心市街地を再生した全国モデルケース。「地域の魅力を五感で体験」というビジョンの実現事例。</p>
+  </div>
+</div>
+</div>
+
+<div class="co"><strong>💡 5つのイベントに共通する成功法則</strong><p>①エリアごとの世界観づくり ②SNS映えするビジュアル設計 ③買い物＋体験の融合 ④出店者との関係構築でリピーター確保 ⑤地域の人・食・文化とつながるストーリー設計</p></div>
+</section>
+
+<!-- ================================================================ -->
+<!-- SECTION 2: ポスター・チラシ -->
+<!-- ================================================================ -->
+<section id="s2">
+<p class="lb">02 ─ Poster & Flyer Design</p>
+<h2 class="tt">ポスター・チラシのデザイン参考サイト 5選</h2>
+<p class="ds">テンプレート・実例ギャラリー・プロの作品集。ポスター原案（4月目標）の前にチームで確認を。</p>
+
+<!-- ① Pinterest -->
+<div class="ft">
+  <img class="ft-img" src="https://i.pinimg.com/736x/5c/27/2a/5c272a86aeb2c1949e6c9ad2c14e8b4f.jpg" alt="Pinterest マルシェポスター例">
+  <div class="ft-body">
+    <div class="tg">アイデア収集</div>
+    <h3>① Pinterest「マルシェ ポスター」</h3>
+    <p>実際のイベントで使われたチラシ・ポスターの実例が大量に集まるギャラリー。<br><br>
+    <strong>検索キーワード例：</strong>「マルシェ チラシ」「秋 イベント ポスター」「flower market poster」「おしゃれ イベント チラシ」<br><br>
+    <strong>使い方：</strong>チームでボードを作成→気に入ったデザインをピン→デザインコンテンツ部で方向性を揃える</p>
+    <a class="lk" href="https://jp.pinterest.com/ideas/マルシェ-ポスター/921876754336/" target="_blank">Pinterestで探す →</a>
+  </div>
+</div>
+
+<div class="g3">
+<!-- ② Canva -->
+<div class="c">
+  <img class="ci" src="https://template.canva.com/EAF3VdP2eA0/1/0/283w-IoxJ3pIKO7g.jpg" alt="Canva マルシェテンプレート">
+  <div class="cb">
+    <div class="tg">無料テンプレート</div>
+    <h3>② Canva マルシェテンプレート</h3>
+    <p>ポスター・チラシ・Instagram投稿・ストーリーまで全カバー。チーム共同編集OK。カラーをイベントカラーに変更するだけでプロ品質。</p>
+    <a class="lk" href="https://www.canva.com/ja_jp/templates/s/marche/" target="_blank">canva.com →</a>
+  </div>
+</div>
+<!-- ③ ランサーズ -->
+<div class="c">
+  <img class="ci" src="https://img.lancers.jp/public/portfolio/portfolio_og.png" alt="ランサーズ">
+  <div class="cb">
+    <div class="tg">プロ作品集</div>
+    <h3>③ ランサーズ マルシェ事例集</h3>
+    <p>プロのデザイナーが制作したマルシェ系チラシ・ポスターのポートフォリオ。外注の相場（5,000〜30,000円）もつかめる。</p>
+    <a class="lk" href="https://www.lancers.jp/portfolio/tag/マルシェ" target="_blank">lancers.jp →</a>
+  </div>
+</div>
+<!-- ④ デザインAC -->
+<div class="c">
+  <img class="ci" src="https://fp.design-ac.net/file/43a5f8b6a1ecb14b38ef5ddcc7f09d06_w.png" alt="デザインAC 秋マルシェテンプレート">
+  <div class="cb">
+    <div class="tg">無料＋印刷対応</div>
+    <h3>④ デザインAC テンプレート</h3>
+    <p>PowerPoint感覚で編集可能な無料テンプレ。秋マルシェ系が豊富。編集後そのまま印刷注文も可能。</p>
+    <a class="lk" href="https://www.design-ac.net/templates/search?keyword=マルシェ" target="_blank">design-ac.net →</a>
+  </div>
+</div>
+</div>
+
+<!-- ⑤ 神戸マルシェ VI -->
+<div class="ft rv">
+  <div class="ft-body">
+    <div class="tg">VI設計の参考</div>
+    <h3>⑤ 神戸マルシェ VI事例（Design Port）</h3>
+    <p>ロゴ・カラーパレット・フォント・写真トーンの統一設計（ビジュアルアイデンティティ）の制作事例。<br><br>
+    <span class="r">→ ポスター・チラシ・SNS・Tシャツの統一感を出すにはVI策定が最優先</span><br><br>
+    <strong>Iconic Shizuokaへの提案配色：</strong><br>コーラルレッド / テラコッタ / クリーム / ゴールド / モスグリーン</p>
+    <a class="lk" href="https://designport.work/works/kobe-marche/" target="_blank">designport.work →</a>
+  </div>
+  <img class="ft-img" src="https://designport.work/wp-content/uploads/2022/07/dp_works_kobemarche07-1024x724.png" alt="神戸マルシェ VI ガイドライン">
+</div>
+</section>
+
+<!-- ================================================================ -->
+<!-- SECTION 3: 会場装飾・フォトスポット -->
+<!-- ================================================================ -->
+<section id="s3">
+<p class="lb">03 ─ Venue Decoration & Photo Spots</p>
+<h2 class="tt">会場装飾・フォトスポットの参考 5選</h2>
+<p class="ds">「フラワード・ストリート」「挑戦の１ページを彩るメインオブジェ」の実現に向けた装飾アイデア。</p>
+
+<div class="g2">
+<!-- ① フラワーウォール -->
+<div class="c">
+  <img class="ci" src="https://oryzae-celebrations.com/wp-content/uploads/corporate-events.jpg" alt="ORYZAE 法人イベント装飾">
+  <div class="cb">
+    <div class="tg">フォトスポット</div>
+    <h3>① フラワーウォール（ORYZAE）</h3>
+    <p>バルーン＋お花で立体的なフォトスポットを制作する専門業者。通り入口やメインオブジェ周辺に設置すればSNS拡散効果が非常に高い。全国対応、数万円〜。</p>
+    <a class="lk" href="https://oryzae-celebrations.com/photo-spots-and-photo-booths/" target="_blank">ORYZAE事例 →</a>
+  </div>
+</div>
+
+<!-- ② バルーンアーチ -->
+<div class="c">
+  <img class="ci" src="https://oryzae-celebrations.com/wp-content/uploads/home-decoration.jpg" alt="バルーン装飾例">
+  <div class="cb">
+    <div class="tg">フォトスポット</div>
+    <h3>② バルーンアーチ装飾</h3>
+    <p>イベントカラーに合わせたバルーンアーチ。花と組み合わせて「挑戦の１ページを彩る」テーマを体現。バルーンアートジャパン等でも対応可能。</p>
+    <a class="lk" href="https://balloonart-japan.com/" target="_blank">バルーンアートジャパン →</a>
+  </div>
+</div>
+</div>
+
+<div class="g3">
+<!-- ③ ガーランド装飾 -->
+<div class="c">
+  <img class="ci" src="https://tanet-design.com/wp-content/uploads/2017/07/marche2016-1.jpg" alt="マスマスマルシェ 装飾実例">
+  <div class="cb">
+    <div class="tg">通り全体の演出</div>
+    <h3>③ ガーランド＋フラッグ（Tane't事例）</h3>
+    <p>横浜マスマスマルシェの装飾実例。街路樹間にガーランドやフラッグを設置。低コストで広範囲の雰囲気づくりが可能。呉服町通りにも応用しやすい。</p>
+    <a class="lk" href="https://tanet-design.com/" target="_blank">Tane't →</a>
+  </div>
+</div>
+
+<!-- ④ サインボード -->
+<div class="c">
+  <img class="ci" src="https://tokyonominoichi.com/2025_autumn/wp-content/uploads/2025/10/サポーターさんがいる風景_画面明るくしたい-e1761901748595-610x610.jpg" alt="東京蚤の市 サポーター風景">
+  <div class="cb">
+    <div class="tg">サイネージ</div>
+    <h3>④ エリアサイン＋誘導看板</h3>
+    <p>東京蚤の市ではサポータースタッフ＋エリアサインで来場者を誘導。手書きチョーク風A型ボードを各エリア入口に設置すると温かみのある世界観に。</p>
+  </div>
+</div>
+
+<!-- ⑤ フラワード・ストリート -->
+<div class="c">
+  <img class="ci" src="https://tokyonominoichi.com/2025_autumn/wp-content/uploads/2025/08/hanadocoroennandennhanatokurashi-コピー-齋藤貴洋.jpg" alt="東京蚤の市 花マルシェ">
+  <div class="cb">
+    <div class="tg">花マルシェ参考</div>
+    <h3>⑤ 東京蚤の市「花マルシェ」エリア</h3>
+    <p>東京蚤の市の「花マルシェ」エリアでは多肉植物・観葉植物・切り花が並ぶ。「フラワード・ストリート」で中央花束→各ブースに一輪届ける導線のイメージに最適。</p>
+  </div>
+</div>
+</div>
+
+<div class="co"><strong>🌸 「フラワード・ストリート」を成功させる3つの鍵</strong><p>① 中央花束→ブースへの花の動線をビジュアルサインで分かりやすく案内<br>② 花瓶をイベントロゴ入りで統一（SNS映え＋ブランディング効果）<br>③ 花を置く行為が「評価ではなく気持ち」であることを会場掲示で丁寧に説明</p></div>
+</section>
+
+<!-- ================================================================ -->
+<!-- SECTION 4: コンテンツ企画 -->
+<!-- ================================================================ -->
+<section id="s4">
+<p class="lb">04 ─ Content Ideas</p>
+<h2 class="tt">コンテンツ企画で参考になるアイデア 5選</h2>
+<p class="ds">異業界コラボ・回遊施策・SNS拡散の仕掛け。既存企画をさらにパワーアップさせるヒント。</p>
+
+<div class="nl">
+<div class="ni"><div class="nn"></div><div>
+  <strong>QRコード連動デジタルスタンプラリー</strong>
+  <span>各ブースにQRコード設置→一定数スキャンでラッキードローに参加可能に。紙より管理が楽で来場者データも収集可能。SNSシェアで追加チャンスを付与すれば拡散も促進。<br><span class="r">→ ラッキードロー × 回遊促進を同時に実現</span></span>
+</div></div>
+
+<div class="ni"><div class="nn"></div><div>
+  <strong>「あなたの挑戦の１ページ」参加型インスタレーション</strong>
+  <span>事前に集めた「挑戦の１ページ」を印刷したカードを来場者がオブジェに飾る。白紙カードも用意して自分の挑戦も書ける。東京蚤の市の「物々交換の本棚」のような来場者参加型の仕掛け。<br><span class="r">→ メインオブジェの体験価値UP ＋ SNS投稿の動機づけ</span></span>
+</div></div>
+
+<div class="ni"><div class="nn"></div><div>
+  <strong>Vlog＆フォトコンテスト（東京蚤の市で実施済み）</strong>
+  <span>東京蚤の市'25 AUTUMNで実際に開催され受賞者も発表済み。来場者がVlog/フォトを投稿→優秀作品を公式SNSで紹介。イベント後もUGC（ユーザー生成コンテンツ）が回り続ける。<br><span class="r">→ イベント終了後もSNSで話題が続く仕組み</span></span>
+</div></div>
+
+<div class="ni"><div class="nn"></div><div>
+  <strong>出店者紹介リール動画シリーズ（事前SNS施策）</strong>
+  <span>開催2ヶ月前から週2〜3本ペースで投稿。「おむすび×地域おこし協力隊」「ラーメン×4大学祭実行委員会」等の異業界コラボはストーリー性が高くバズりやすい。県内インフルエンサーにリポスト依頼。<br><span class="r">→ 事前集客＋協賛企業動画制作（富士山プラン）にもつながる</span></span>
+</div></div>
+
+<div class="ni"><div class="nn"></div><div>
+  <strong>「青春蚤の市」型 学生限定出店エリア</strong>
+  <span>東京蚤の市が2026年春に新設した高校生〜大学院生限定出店エリア「青春蚤の市」。初出店サポート班の活動と連動させれば、高校生の挑戦を可視化できる。メディア取材にもつながりやすいコンテンツ。<br><span class="r">→ ターゲット層（高校生・大学生）の当事者性を最大化</span></span>
+</div></div>
+</div>
+
+<div class="co"><strong>📢 メディア露出を狙うなら</strong><p>学生主催×異業界コラボ×地域活性化はメディアが注目する三拍子。特に「Jリーグ最年少コールリーダー×いもじぇんぬコラボスイーツ」「ラーメン×4大学の大学祭実行委員会」は絵になるので、PR TIMES学割でのプレスリリース配信も検討を。</p></div>
+</section>
+
+<!-- ================================================================ -->
+<!-- SECTION 5: 全リンク -->
+<!-- ================================================================ -->
+<section id="s5">
+<p class="lb">05 ─ All Links</p>
+<h2 class="tt">🔗 全リンクまとめ</h2>
+<p class="ds">チームでブックマーク・共有してください。</p>
+
+<div class="ls"><h3>参考イベント</h3>
+  <div class="li"><div class="ln">1</div><div><a href="https://tokyonominoichi.com/2025_autumn/" target="_blank">東京蚤の市（手紙社）</a><div class="ld">日本最大級マーケット。エリア設計・Vlogコンテスト・青春蚤の市が参考</div></div></div>
+  <div class="li"><div class="ln">2</div><div><a href="https://marugotodesign.com/" target="_blank">仙台まるごとデザインマーケット</a><div class="ld">東北最大級クリエイティブイベント。企業PR＋学生交流の同時開催</div></div></div>
+  <div class="li"><div class="ln">3</div><div><a href="https://designfesta.com/" target="_blank">デザインフェスタ</a><div class="ld">アジア最大級アートイベント。ブース装飾・初出店サポート</div></div></div>
+  <div class="li"><div class="ln">4</div><div><a href="https://greensprings.jp/" target="_blank">GREEN SPRINGS / GREEN HOOP MARKET</a><div class="ld">食×クラフト×音楽の融合マーケット</div></div></div>
+  <div class="li"><div class="ln">5</div><div><a href="https://www.furano.ne.jp/marche/" target="_blank">フラノマルシェ（富良野）</a><div class="ld">地域資源を活かした常設マルシェ。行政×民間連携モデル</div></div></div>
+</div>
+
+<div class="ls" style="margin-top:16px"><h3>ポスター・チラシ デザイン</h3>
+  <div class="li"><div class="ln">1</div><div><a href="https://jp.pinterest.com/ideas/マルシェ-ポスター/921876754336/" target="_blank">Pinterest「マルシェ ポスター」</a><div class="ld">実例ギャラリー。チームでボード共有</div></div></div>
+  <div class="li"><div class="ln">2</div><div><a href="https://www.canva.com/ja_jp/templates/s/marche/" target="_blank">Canva マルシェテンプレート</a><div class="ld">無料テンプレート。チーム共同編集対応</div></div></div>
+  <div class="li"><div class="ln">3</div><div><a href="https://www.lancers.jp/portfolio/tag/マルシェ" target="_blank">ランサーズ マルシェ事例</a><div class="ld">プロ作品集。外注の相場感もつかめる</div></div></div>
+  <div class="li"><div class="ln">4</div><div><a href="https://www.design-ac.net/templates/search?keyword=マルシェ" target="_blank">デザインAC テンプレート</a><div class="ld">無料テンプレ。印刷注文も可能</div></div></div>
+  <div class="li"><div class="ln">5</div><div><a href="https://designport.work/works/kobe-marche/" target="_blank">神戸マルシェ VI事例</a><div class="ld">ロゴ＋カラー＋フォントの統一設計事例</div></div></div>
+</div>
+
+<div class="ls" style="margin-top:16px"><h3>会場装飾・フォトスポット</h3>
+  <div class="li"><div class="ln">1</div><div><a href="https://oryzae-celebrations.com/photo-spots-and-photo-booths/" target="_blank">ORYZAE フォトスポット事例</a><div class="ld">バルーン＆フラワー装飾。全国対応</div></div></div>
+  <div class="li"><div class="ln">2</div><div><a href="https://balloonart-japan.com/" target="_blank">バルーンアートジャパン</a><div class="ld">バルーンアーチ・フォトスポット装飾</div></div></div>
+  <div class="li"><div class="ln">3</div><div><a href="https://tanet-design.com/" target="_blank">Tane't（たねっと）</a><div class="ld">マスマスマルシェ等の装飾デザイン実績</div></div></div>
+  <div class="li"><div class="ln">4</div><div><a href="https://hanasenseikatsu.com/" target="_blank">花泉（はなせん）</a><div class="ld">イベント花装飾の専門業者</div></div></div>
+  <div class="li"><div class="ln">5</div><div><a href="https://tokyonominoichi.com/2025_autumn/shop/shop_category/flower/" target="_blank">東京蚤の市「花マルシェ」出店者一覧</a><div class="ld">花マルシェエリアの雰囲気・出店者が参考になる</div></div></div>
+</div>
+
+<div class="ls" style="margin-top:16px"><h3>制作ツール</h3>
+  <div class="li"><div class="ln">+</div><div><a href="https://www.canva.com/ja_jp/" target="_blank">Canva</a><div class="ld">デザイン全般（ポスター・SNS・Tシャツ）</div></div></div>
+  <div class="li"><div class="ln">+</div><div><a href="https://www.figma.com/" target="_blank">Figma</a><div class="ld">共同デザイン編集（LP・ポスター）</div></div></div>
+  <div class="li"><div class="ln">+</div><div><a href="https://www.capcut.com/" target="_blank">CapCut</a><div class="ld">リール動画・TikTok編集</div></div></div>
+  <div class="li"><div class="ln">+</div><div><a href="https://prtimes.jp/" target="_blank">PR TIMES</a><div class="ld">プレスリリース配信（学割プランあり）</div></div></div>
+</div>
+</section>
+
+</div>
+
+<footer>
+  <p style="font-weight:700;margin-bottom:4px">Iconic Shizuoka 2026 — デザイン＆コンテンツ参考資料集</p>
+  <p>I see's（Iconic Shizuoka 2026 実行委員会）内部共有用 ｜ 2026年3月12日作成</p>
+  <p style="margin-top:8px;font-size:10px;color:#aaa">※ 掲載画像は各イベント・サービスの公式サイトから取得したものです。内部参考用途でのみご利用ください。</p>
+</footer>
+
+</body>
+</html>
